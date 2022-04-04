@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "f7fffd60-43ed-4d6c-b524-69dd3a252a2a",
+		"name": "Spring-reactive-customers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get customer by city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer/HYD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer",
+						"HYD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Unique-Refwerence-Code",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"AkiraNandan\",\r\n    \"dateOfBirth\": \"20-12-2012\",\r\n    \"gender\": \"F\",\r\n    \"city\": \"HYD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update exisiting customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Unique-Refwerence-Code",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"AkiraNandan\",\r\n    \"dateOfBirth\": \"20-12-2012\",\r\n    \"gender\": \"M\",\r\n    \"city\": \"HYD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer/62403058ee340b5ec8de51ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer",
+						"62403058ee340b5ec8de51ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update non exisiting customer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Unique-Refwerence-Code",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"AkiraNandan\",\r\n    \"dateOfBirth\": \"20-12-2012\",\r\n    \"gender\": \"M\",\r\n    \"city\": \"HYD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer/abc123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer",
+						"abc123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete non exisiting customer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Unique-Refwerence-Code",
+						"value": "{{$timestamp}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customers/v1/customer/abc123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"v1",
+						"customer",
+						"abc123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
